@@ -1,17 +1,38 @@
-int led_pin = 1;
+int ledWing_left = 1;   //red
+int ledWing_right = 2;  //green
+int ledFuselage = 3;    //white
 
 void setup() {
-  pinMode(led_pin, OUTPUT);
-
+  pinMode(ledWing_left, OUTPUT);
+  pinMode(ledWing_right, OUTPUT);
+  pinMode(ledFuselage, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(led_pin, HIGH);
+  Wing();
+  Fuselage();
+}
+
+void Wing()
+{
+  digitalWrite(ledWing_left, HIGH);
+  digitalWrite(ledWing_right, HIGH);
   delay(50);
-  digitalWrite(led_pin, LOW);
+  digitalWrite(ledWing_left, LOW);
+  digitalWrite(ledWing_right, LOW);
   delay(200);
-  digitalWrite(led_pin, HIGH);
+  digitalWrite(ledWing_left, HIGH);
+  digitalWrite(ledWing_right, HIGH);
   delay(50);
-  digitalWrite(led_pin, LOW);
-  delay(2000);
+  digitalWrite(ledWing_left, LOW);
+  digitalWrite(ledWing_right, LOW);
+  delay(1000);
+}
+
+void Fuselage()
+{
+  digitalWrite(ledFuselage, HIGH);
+  delay(50);
+  digitalWrite(ledFuselage, LOW);
+  delay(1000);
 }
